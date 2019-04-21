@@ -13,7 +13,7 @@ media_player = pydbus.SystemBus().get('org.bluez', '/org/bluez/hci0/dev_44_C3_46
 
 while True:
 	print("1.Play 2.Pause 3.Next 4.Previous")
-	choice = int(input("Enter choice:"))
+	choice = int(input("Enter choice number:"))
 
 	if choice == 1:
 		media_player.Play()
