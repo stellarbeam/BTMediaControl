@@ -8,7 +8,7 @@ for key in obj_list.keys():
 		print(" Device Address: " + obj_list[key]['org.bluez.MediaPlayer1']['Device'])
 		print(" Player:         " + key)
 
-media_player = pydbus.SystemBus().get('org.bluez', '/org/bluez/hci0/dev_44_C3_46_7B_2D_C7/player0')
+media_player = pydbus.SystemBus().get('org.bluez', key)
 
 
 while True:
