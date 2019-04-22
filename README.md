@@ -11,3 +11,7 @@ Control Music player of smartphone connected via Bluetooth, for Ubuntu (not test
 2. Play music on phone(the a2dp source), and make sure your Ubuntu machine speakers(the a2dp sink) play the audio
 3. Run the script main.py
 4. Now you can do Play, Pause, Next track, Previous track from Ubuntu machine itself
+
+## Having problems with bluetooth?
+If Step 2 of '<b>How to use?</b>' is not working for you, the following might help. Check out this link
+<a href=https://askubuntu.com/a/109533/849242> here. </a>
