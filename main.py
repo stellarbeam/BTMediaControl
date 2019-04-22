@@ -7,6 +7,7 @@ for key in obj_list.keys():
 	if "player" in key:
 		print(" Device Address: " + obj_list[key]['org.bluez.MediaPlayer1']['Device'])
 		print(" Player:         " + key)
+		break
 
 media_player = pydbus.SystemBus().get('org.bluez', key)
 
