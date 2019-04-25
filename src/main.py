@@ -75,13 +75,13 @@ class MediaPlayer:
         self.PauseButton.bind('<Button-1>',self.Pause)
         self.PauseButton.pack(side=TOP,fill=X)
 
-        self.PauseButton = Button(self.frame,text="Next")
-        self.PauseButton.bind('<Button-1>',self.Next)
-        self.PauseButton.pack(side=TOP,fill=X)
+        self.NextButton = Button(self.frame,text="Next")
+        self.NextButton.bind('<Button-1>',self.Next)
+        self.NextButton.pack(side=TOP,fill=X)
 
-        self.PauseButton = Button(self.frame,text="Previous")
-        self.PauseButton.bind('<Button-1>',self.Previous)
-        self.PauseButton.pack(side=TOP,fill=X)
+        self.PreviousButton = Button(self.frame,text="Previous")
+        self.PreviousButton.bind('<Button-1>',self.Previous)
+        self.PreviousButton.pack(side=TOP,fill=X)
 
         self.root.resizable(0,0)
         self.frame.pack()
