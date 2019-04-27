@@ -1,18 +1,14 @@
-#!/usr/bin/python3
+#!/usr/bin/python
 
 try:
     from tkinter import Tk, Frame, Button
-    from tkinter import font, ttk
     from tkinter import TOP, BOTH, LEFT, RIGHT
 except ImportError: #python2
     from Tkinter import Tk, Frame, Button
-    import tkFont as font
-    import ttk
-
-from threading import Thread
+    from tkinter import TOP, BOTH, LEFT, RIGHT
 
 class Window(Tk):
-    def __init__(self,arg_list=None):
+    def __init__(self,arg_list):
         super().__init__()
         self.arg_list = arg_list
 
@@ -28,7 +24,6 @@ class Window(Tk):
 
         self.right_frame = Frame(self.top_frame,width=175,height=50)
         self.right_frame.pack_propagate(0)
-
 
         #Buttons
         self.PlayButton = Button( self.left_frame, text="Play")
