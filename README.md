@@ -1,5 +1,5 @@
 # BTMediaControl
-Control Music player of smartphone connected via Bluetooth, for Ubuntu (not tested on other Linux distributions)
+Control media player of smartphone connected via Bluetooth, for Ubuntu (not tested on other Linux distributions)
 
 ## Requirements
 1. BlueZ version >= 5.48
