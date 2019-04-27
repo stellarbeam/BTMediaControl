@@ -5,7 +5,7 @@ try:
     from tkinter import TOP, BOTH, LEFT, RIGHT
 except ImportError: #python2
     from Tkinter import Tk, Frame, Button
-    from tkinter import TOP, BOTH, LEFT, RIGHT
+    from Tkinter import TOP, BOTH, LEFT, RIGHT
 
 class Window(Tk):
     def __init__(self,arg_list):
