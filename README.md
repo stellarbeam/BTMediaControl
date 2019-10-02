@@ -2,9 +2,9 @@
 Control media player of smartphone connected via Bluetooth, for Ubuntu (not tested on other Linux distributions)
 
 ## Requirements
-1. BlueZ version >= 5.48
+1. `BlueZ` version >= 5.48 (usually pre-installed)
 2. Python 2 or 3
-3. pydbus module installed
+3. `pydbus` and `tkinter` (or `Tkinter` if you are using Python 2) modules installed
 
 ## How to use?
 1. Pair your smartphone to Ubuntu machine
