@@ -1,4 +1,3 @@
-#!/usr/bin/python3
 
 from time import sleep
 from threading import Thread
@@ -37,22 +36,27 @@ class MediaPlayer:
     def Update_obj_list(self, *args):
         self.obj_list = self.service.GetManagedObjects()
 
-    def TrackInfoUpdater(self): # To be used by gui
+    def TrackInfoUpdater(self):
         while self.TerminateFlag is False:
             try:
-                self.pos = self.media_player.Get('org.bluez.MediaPlayer1','Position')
                 self.track_info = self.media_player.Get('org.bluez.MediaPlayer1','Track')
+                self.track_info['Position'] = self.media_player.Get('org.bluez.MediaPlayer1','Position')
+                self.track_info['Status'] = self.media_player.Get('org.bluez.MediaPlayer1','Status')
             except:
-                self.pos = 0
                 self.track_info = {
-                    'Title'   :''  ,
-                    'Duration':0   ,
-                    'Album'   :''  ,
-                    'Artist'  :''  ,
-                    'Genre'   :''
+                    'Title'   :''       ,
+                    'Album'   :''       ,
+                    'Artist'  :''       ,
+                    'Genre'   :''       ,
+                    'Duration':0        ,
+                    'Position':0        ,
+                    'Status'  :'stopped'
                 }
 
             sleep(0.2)
+
+    def GetTrackInfo(self):
+        return self.track_info
 
     def Start(self):
         self.ConnectMediaPlayer()
@@ -81,16 +85,16 @@ class MediaPlayer:
     def isPlayerConnected(self):
         return self.player_connected
 
-    def Play(self,event):
+    def Play(self):
         self.media_player.Play()
 
-    def Pause(self,event):
+    def Pause(self):
         self.media_player.Pause()
 
-    def Next(self,event):
+    def Next(self):
         self.media_player.Next()
 
-    def Previous(self,event):
+    def Previous(self):
         self.media_player.Previous()
 
     def Terminate(self):
@@ -110,7 +114,8 @@ class MediaPlayer:
             'Next':self.Next,
             'Previous':self.Previous,
             'isPlayerConnected':self.isPlayerConnected,
-            'CheckConnection':self.CheckConnection
+            'CheckConnection':self.CheckConnection,
+            'GetTrackInfo':self.GetTrackInfo
         }
 
     def CreateWindow(self):
